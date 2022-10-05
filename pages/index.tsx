@@ -11,8 +11,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex bg-black w-full flex-1 flex-col items-center justify-center">
-        <h1 className="text-6xl text-gray-100 font-bold">
+      <main className="flex bg-black w-full h-full flex-1 flex-col items-center justify-center bg-gradient-to-r from-amber-400 via-rose-600 to-amber-400 animate-gradient-x">
+        <h1 className="text-6xl text-gray-100 font-bold ">
           Under {' '}
           <span className="text-green-600">
           Construction
