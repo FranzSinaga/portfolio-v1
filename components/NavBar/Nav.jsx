@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <nav className="p-3 fixed bg-gray-50 w-full border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <nav className="p-3 fixed z-20 bg-black w-full">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
           <img
