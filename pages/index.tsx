@@ -14,10 +14,17 @@ const Home: NextPage = () => {
       </Head>
 
       <AnimatedBgHero>
-        <div className="flex flex-col items-center">
-          <h1 className="text-6xl text-white font-bold ">
-            👋 Hello <span className="text-rose-600">World</span>
+        <div className="flex flex-col ml-36">
+          <p className="text-white text-xl">Hi, my name is</p>
+          <h1 className="text-6xl text-white font-bold leading-tight">
+            Franz Sinaga
+            <br /> I build things for the web.
           </h1>
+          <p className="mt-12 text-white max-w-2xl text-xl">
+            I’m a software engineer specializing in building (and occasionally
+            designing) exceptional digital experiences. Currently, I’m focused
+            on building accessible, human-centered products at Upstatement.
+          </p>
         </div>
       </AnimatedBgHero>
 
@@ -89,7 +96,7 @@ const Home: NextPage = () => {
               type="button"
               className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
             >
-              Purple to Blue
+              Say Hello
             </button>
           </div>
         </div>

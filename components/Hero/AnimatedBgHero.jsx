@@ -6,7 +6,7 @@ const AnimatedBgHero = ({ children }) => {
         <div className="features_gradient features_gradient-2 bg-green-400"></div>
         <div className="features_gradient features_gradient-3 bg-rose-600"></div>
       </div>
-      <div className="container mx-auto z-10 text-center">{children}</div>
+      <div className="container mx-auto z-10 text-">{children}</div>
     </section>
   );
 };
