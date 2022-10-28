@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="bg-black">
       <Head>
+        <script src="https://kit.fontawesome.com/ab123fe2d6.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
       </Head>
       <Nav />

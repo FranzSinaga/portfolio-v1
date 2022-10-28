@@ -14,37 +14,50 @@ const Home: NextPage = () => {
       </Head>
 
       <AnimatedBgHero>
-        <div className="flex flex-col ml-36">
-          <p className="text-white text-xl">Hi, my name is</p>
-          <h1 className="text-6xl text-white font-bold leading-tight">
+        <div className="flex flex-col ml-36 text-white">
+          <p className="text-xl">My Name is</p>
+          <h1 className="text-6xl font-bold leading-tight">
             Franz Sinaga
-            <br /> I build things for the web.
+            <br /> Frontend Developer
           </h1>
-          <p className="mt-12 text-white max-w-2xl text-xl">
-            I’m a software engineer specializing in building (and occasionally
-            designing) exceptional digital experiences. Currently, I’m focused
-            on building accessible, human-centered products at Upstatement.
+          <p className="mt-12 max-w-2xl text-xl">
+            I am a Frontend focused Web Developer. I build Frontend Websites and
+            Web Apps that lead to product success.
           </p>
         </div>
       </AnimatedBgHero>
 
-      <div className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900">
-        <div className="px-4 py-14 md:py-60 lg:py-40 xl:py-60">
+      <div
+        id="about"
+        className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900"
+      >
+        <div className="px-4 pt-14 md:pt-60 lg:pt-40 xl:pt-60">
           <div className="mx-auto text-center">
-            <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              I am a Software Engineering
+            <h1 className="max-w-4xl mb-24 text-4xl border-white font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Get to know me!
             </h1>
+          </div>
+        </div>
+        <div className="container flex flex wrap items-center justify-center">
+          <div className="text-center">
             <p className="max-w-4xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              graduate who has a curiosity about technology in the field of
-              software development. Have experience in building a software to
-              solve a problem. looking for opportunities to apply my knowledge
-              and skills in a work environment
+              I am a <span className="font-bold">Front-End Developer</span>{" "}
+              located in Jakarta, Indonesia. Currently working in one of the
+              biggest bank in Indonesia to build product that meet user need.
+              <br />
+              <br />I enjoy creating things that come to live on the internet.
+              Interested in <span className="font-bold">
+                web development
+              </span>{" "}
+              and curiosity about technology in web development field. Have
+              experience in building applications to solve a problem and can
+              meet product needs.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-white dark:bg-gray-900 border-gray-900">
+      {/* <div className="bg-white dark:bg-gray-900 border-gray-900">
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -66,9 +79,9 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="bg-white dark:bg-gray-900 border-gray-900">
+      {/* <div className="bg-white dark:bg-gray-900 border-gray-900">
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl my-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -79,39 +92,57 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900">
+      <div
+        id="contact"
+        className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900"
+      >
         <div className="px-4 py-14 md:py-60 lg:py-40 xl:py-60">
           <div className="mx-auto text-center">
             <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Get In Touch
             </h1>
             <p className="max-w-4xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              Although I’m not currently looking for any new opportunities, my
-              inbox is always open. Whether you have a question or just want to
-              say hi, I’ll try my best to get back to you! Say Hello
+              Whether you have a question or just want to say hi, I’ll try my
+              best to get back to you! Say Hello
             </p>
-            <button
+            <a
+              href="mailto:sinagafranz12@gmail.com"
               type="button"
-              className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
             >
-              Say Hello
-            </button>
+              Say Hello 👋
+            </a>
           </div>
         </div>
       </div>
 
-      <footer className="flex h-24 w-full bg-gray-900 border-gray-900 items-center justify-center border-t">
-        <a
+      <footer className="flex flex-col h-36 w-full bg-gray-900 border-gray-900 items-center justify-center border-t">
+        <div className="m-3 flex items-center justify-center gap-7">
+          <a href="https://github.com/FranzSinaga" className="text-gray-400 hover:text-white" target="_BLANK">
+            <i className="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://id.linkedin.com/in/franz-sinaga" className="text-gray-400 hover:text-white" target="_BLANK">
+            <i className="fab fa-linkedin fa-2x "></i>
+          </a>
+          <a href="mailto:sinagafranz12@gmail.com" className="text-gray-400 hover:text-white">
+            <i className="far fa-envelope fa-2x"></i>
+          </a>
+        </div>
+        <div>
+          <p className="text-gray-400 font-light text-lg">
+            &#169; 2022 Franz Aditya Natanael Sinaga
+          </p>
+        </div>
+        {/* <a
           className="flex items-center justify-center gap-2 text-white font-bold"
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Powered by Vercel
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
+        > */}
+        {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
+        {/* </a> */}
       </footer>
     </div>
   );
