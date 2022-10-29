@@ -21,7 +21,7 @@ const Home: NextPage = () => {
             <br /> Frontend Developer
           </h1>
           <p className="mt-12 max-w-2xl text-xl">
-            I am a Frontend focused Web Developer. I build Frontend Websites and
+            I am a Frontend-focused Web Developer. I build Frontend Websites and
             Web Apps that lead to product success.
           </p>
         </div>
@@ -43,13 +43,14 @@ const Home: NextPage = () => {
             <p className="max-w-4xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               I am a <span className="font-bold">Front-End Developer</span>{" "}
               located in Jakarta, Indonesia. Currently working in one of the
-              biggest bank in Indonesia to build product that meet user need.
+              biggest banks in Indonesia to build a product that meets the user
+              need.
               <br />
               <br />I enjoy creating things that come to live on the internet.
               Interested in <span className="font-bold">
                 web development
               </span>{" "}
-              and curiosity about technology in web development field. Have
+              and curiosity about technology in the web development field. Have
               experience in building applications to solve a problem and can
               meet product needs.
             </p>
@@ -120,13 +121,24 @@ const Home: NextPage = () => {
 
       <footer className="flex flex-col h-36 w-full bg-gray-900 border-gray-900 items-center justify-center border-t">
         <div className="m-3 flex items-center justify-center gap-7">
-          <a href="https://github.com/FranzSinaga" className="text-gray-400 hover:text-white" target="_BLANK">
+          <a
+            href="https://github.com/FranzSinaga"
+            className="text-gray-400 hover:text-white"
+            target="_BLANK"
+          >
             <i className="fab fa-github fa-2x"></i>
           </a>
-          <a href="https://id.linkedin.com/in/franz-sinaga" className="text-gray-400 hover:text-white" target="_BLANK">
+          <a
+            href="https://id.linkedin.com/in/franz-sinaga"
+            className="text-gray-400 hover:text-white"
+            target="_BLANK"
+          >
             <i className="fab fa-linkedin fa-2x "></i>
           </a>
-          <a href="mailto:sinagafranz12@gmail.com" className="text-gray-400 hover:text-white">
+          <a
+            href="mailto:sinagafranz12@gmail.com"
+            className="text-gray-400 hover:text-white"
+          >
             <i className="far fa-envelope fa-2x"></i>
           </a>
         </div>
