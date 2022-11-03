@@ -5,6 +5,10 @@ import AnimatedBgHero from "../components/Hero/AnimatedBgHero";
 import Cards from "../components/Cards/Cards";
 import Timeline from "../components/Timeline/Timeline";
 
+import GithubIcon from "../Icons/GithubIcon";
+import LinkedinIcon from "../Icons/LinkedinIcon";
+import EnvelopeIcon from "../Icons/EnvelopeIcon";
+
 const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen flex-col">
@@ -15,12 +19,12 @@ const Home: NextPage = () => {
 
       <AnimatedBgHero>
         <div className="flex flex-col ml-36 text-white">
-          <p className="text-xl">My Name is</p>
+          <p className="text-xl tracking-tight">My Name is</p>
           <h1 className="text-6xl font-bold leading-tight">
             Franz Sinaga
             <br /> Frontend Developer
           </h1>
-          <p className="mt-12 max-w-2xl text-xl">
+          <p className="mt-12 max-w-2xl text-xl tracking-tight">
             I am a Frontend-focused Web Developer. I build Frontend Websites and
             Web Apps that lead to product success.
           </p>
@@ -58,7 +62,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* <div className="bg-white dark:bg-gray-900 border-gray-900">
+      {/* <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900">
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -82,18 +86,19 @@ const Home: NextPage = () => {
         </div>
       </div> */}
 
-      {/* <div className="bg-white dark:bg-gray-900 border-gray-900">
-        <div className="container mx-auto flex flex-col">
-          <div className="mx-14">
-            <h1 className="max-w-4xl my-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+      <div className="pt-80 bg-white dark:bg-gray-900 border-gray-900">
+        <div id="experience" className="mb-16"></div>
+        <div className=" container mx-auto flex flex-col">
+          <div className="ml-14">
+            <h1 className="text-center max-w-4xl my-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Where I’ve Worked
             </h1>
-            <div className="flex flex-row justify-center flex-wrap gap-5">
+            <div className="flex flex-row justify-center flex-wrap">
               <Timeline></Timeline>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div
         id="contact"
@@ -126,20 +131,20 @@ const Home: NextPage = () => {
             className="text-gray-400 hover:text-white"
             target="_BLANK"
           >
-            <i className="fab fa-github fa-2x"></i>
+            <GithubIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
           </a>
           <a
             href="https://id.linkedin.com/in/franz-sinaga"
             className="text-gray-400 hover:text-white"
             target="_BLANK"
           >
-            <i className="fab fa-linkedin fa-2x "></i>
+            <LinkedinIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
           </a>
           <a
             href="mailto:sinagafranz12@gmail.com"
             className="text-gray-400 hover:text-white"
           >
-            <i className="far fa-envelope fa-2x"></i>
+            <EnvelopeIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
           </a>
         </div>
         <div>
