@@ -5,9 +5,7 @@ import AnimatedBgHero from "../components/Hero/AnimatedBgHero";
 import Cards from "../components/Cards/Cards";
 import Timeline from "../components/Timeline/Timeline";
 
-import GithubIcon from "../Icons/GithubIcon";
-import LinkedinIcon from "../Icons/LinkedinIcon";
-import EnvelopeIcon from "../Icons/EnvelopeIcon";
+import { GithubIcon, LinkedinIcon, EnvelopeIcon } from "../Icons/SocialIcons";
 
 const Home: NextPage = () => {
   return (
