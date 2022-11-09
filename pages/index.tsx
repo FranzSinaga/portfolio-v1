@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import AnimatedBgHero from "../components/Hero/AnimatedBgHero";
-import Cards from "../components/Cards/Cards";
+import ProjectCards from "../components/Cards/ProjectCards";
 import Timeline from "../components/Timeline/Timeline";
 
 import { GithubIcon, LinkedinIcon, EnvelopeIcon } from "../Icons/SocialIcons";
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900">
+      <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900" id="projects">
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -68,23 +68,44 @@ const Home: NextPage = () => {
             </h1>
             <div className="flex flex-row md:justify-center lg:justify-center xl:justify-start flex-wrap gap-5 sm:gap-5 md:gap-4 lg:gap-2">
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards
+                <ProjectCards
                   title="Indonesia Covid Data"
                   detail="Build a website to display the number of corona virus cases that occurred in Indonesia"
+                  tech={["React JS", "Bootstrap", "Rest API"]}
+                  Link="https://franzsinaga.github.io/SimpleIndonesiaCoronavirus/"
+                  GithubLink="https://github.com/FranzSinaga/SimpleIndonesiaCoronavirus"
                 />
               </div>
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards
+                <ProjectCards
                   title="Simple Todo List"
                   detail="Building a simple Todo web app to organize the activities you want to do"
+                  tech={["React JS", "Redux", "Tailwind CSS"]}
+                  Link="https://franzsinaga.github.io/r_todolist/"
+                  GithubLink="https://github.com/FranzSinaga/r_todolist"
                 />
               </div>
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards
-                  title="Premier League Table PWA's"
+                <ProjectCards
+                  title="Premier League Table"
                   detail="Website to display the current standings for the English league"
+                  tech={["HTML", "Materialize CSS", "JS", "Workbox", "PWA"]}
+                  Link="https://fir-hosting-a2698.web.app/"
+                  GithubLink="https://github.com/FranzSinaga/pwa-premier-league-table"
                 />
               </div>
+            </div>
+          </div>
+          <div className="px-4 mt-10">
+            <div className="mx-auto text-center">
+              <a
+                href="https://github.com/FranzSinaga?tab=repositories"
+                type="button"
+                className="text-white text-xl bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-light rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
+                target="_BLANK"
+              >
+                Other Project 👋
+              </a>
             </div>
           </div>
         </div>
@@ -120,7 +141,7 @@ const Home: NextPage = () => {
             <a
               href="mailto:sinagafranz12@gmail.com"
               type="button"
-              className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
+              className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-light rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
             >
               Say Hello 👋
             </a>
