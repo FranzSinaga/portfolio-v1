@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900">
+      <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900">
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -68,21 +68,27 @@ const Home: NextPage = () => {
             </h1>
             <div className="flex flex-row md:justify-center lg:justify-center xl:justify-start flex-wrap gap-5 sm:gap-5 md:gap-4 lg:gap-2">
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards />
+                <Cards
+                  title="Indonesia Covid Data"
+                  detail="Build a website to display the number of corona virus cases that occurred in Indonesia"
+                />
               </div>
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards />
+                <Cards
+                  title="Simple Todo List"
+                  detail="Building a simple Todo web app to organize the activities you want to do"
+                />
               </div>
               <div className=" md:basis-72 lg:basis-auto">
-                <Cards />
-              </div>
-              <div className=" md:basis-72 lg:basis-auto">
-                <Cards />
+                <Cards
+                  title="Premier League Table PWA's"
+                  detail="Website to display the current standings for the English league"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="pt-80 bg-white dark:bg-gray-900 border-gray-900">
         <div id="experience" className="mb-16"></div>
