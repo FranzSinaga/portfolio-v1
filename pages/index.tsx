@@ -13,6 +13,12 @@ const Home: NextPage = () => {
       <Head>
         <title>Franz Sinaga</title>
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="title" content="Franz Sinaga" />
+        <meta
+          name="description"
+          content="Franz Sinaga is a software engineer who specializes in Frontend-focused Web Developer"
+        />
       </Head>
 
       <AnimatedBgHero>
