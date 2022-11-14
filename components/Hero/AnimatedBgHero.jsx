@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 const AnimatedBgHero = ({ children }) => {
   return (
     <section className=" relative overflow-hidden hero-height flex items-center justify-center">
@@ -10,5 +13,9 @@ const AnimatedBgHero = ({ children }) => {
     </section>
   );
 };
+
+AnimatedBgHero.propTypes = {
+  children: PropTypes.any
+}
 
 export default AnimatedBgHero;

@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import { GithubAltIcon } from "../../Icons/SocialIcons";
 import { UpRightFromSquareIcon } from "../../Icons/ArrowIcons";
 import { FolderIcons } from "../../Icons/BasicIcons";
@@ -17,6 +20,7 @@ const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
               href={Link}
               className="text-gray-400 hover:text-white"
               target="_BLANK"
+              rel="noreferrer"
             >
               <UpRightFromSquareIcon className="w-7 h-7 font-light fill-gray-400 hover:fill-blue-400" />
             </a>
@@ -29,6 +33,7 @@ const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
               href={GithubLink}
               className="text-gray-400 hover:text-white"
               target="_BLANK"
+              rel="noreferrer"
             >
               <GithubAltIcon className="w-7 h-7 fill-gray-400 hover:fill-blue-400" />
             </a>
@@ -46,6 +51,14 @@ const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
       </ul>
     </div>
   );
+};
+
+ProjectCards.propTypes = {
+  title: PropTypes.string.isRequired,
+  detail: PropTypes.string.isRequired,
+  tech: PropTypes.array.isRequired,
+  GithubLink: PropTypes.string.isRequired,
+  Link: PropTypes.string.isRequired,
 };
 
 export default ProjectCards;
