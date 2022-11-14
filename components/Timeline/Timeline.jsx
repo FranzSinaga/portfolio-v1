@@ -1,3 +1,5 @@
+import React from "react";
+
 const Timeline = () => {
   return (
     <div className="flex justify-end max-w-3xl">

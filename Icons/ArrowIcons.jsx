@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 // Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
 export const UpRightFromSquareIcon = ({ className }) => {
   return (
@@ -10,3 +13,7 @@ export const UpRightFromSquareIcon = ({ className }) => {
     </svg>
   );
 };
+
+UpRightFromSquareIcon.propTypes = {
+  className: PropTypes.any.isRequired
+}

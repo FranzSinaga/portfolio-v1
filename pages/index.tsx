@@ -60,7 +60,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-96 bg-white dark:bg-gray-900 border-gray-900" id="projects">
+      <div
+        className="pt-96 bg-white dark:bg-gray-900 border-gray-900"
+        id="projects"
+      >
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -177,14 +180,6 @@ const Home: NextPage = () => {
             &#169; 2022 Franz Aditya Natanael Sinaga
           </p>
         </div>
-        {/* <a
-          className="flex items-center justify-center gap-2 text-white font-bold"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        > */}
-        {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
-        {/* </a> */}
       </footer>
     </div>
   );

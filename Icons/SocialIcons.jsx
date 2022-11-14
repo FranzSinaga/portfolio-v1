@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 // Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
 export const EnvelopeIcon = ({ className }) => {
   return (
@@ -10,6 +13,7 @@ export const EnvelopeIcon = ({ className }) => {
     </svg>
   );
 };
+EnvelopeIcon.propTypes = { className: PropTypes.any };
 
 export const GithubIcon = ({ className }) => {
   return (
@@ -22,6 +26,7 @@ export const GithubIcon = ({ className }) => {
     </svg>
   );
 };
+GithubIcon.propTypes = { className: PropTypes.any };
 
 export const GithubAltIcon = ({ className }) => {
   return (
@@ -34,6 +39,7 @@ export const GithubAltIcon = ({ className }) => {
     </svg>
   );
 };
+GithubAltIcon.propTypes = { className: PropTypes.any };
 
 export const LinkedinIcon = ({ className }) => {
   return (
@@ -46,3 +52,4 @@ export const LinkedinIcon = ({ className }) => {
     </svg>
   );
 };
+LinkedinIcon.propTypes = { className: PropTypes.any };
