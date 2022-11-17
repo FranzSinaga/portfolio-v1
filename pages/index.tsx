@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <AnimatedBgHero>
-        <div className="flex flex-col ml-36 text-white">
+        <div className="flex flex-col ml-36 text-dark dark:text-white">
           <p className="text-xl tracking-tight">My Name is</p>
           <h1 className="text-6xl font-bold leading-tight">
             Franz Sinaga
@@ -158,27 +158,24 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <footer className="flex flex-col h-36 w-full bg-gray-900 border-gray-900 items-center justify-center border-t">
+      <footer className="flex flex-col h-36 w-full bg-white dark:bg-gray-900 border-white dark:border-gray-900 items-center justify-center border-t">
         <div className="m-3 flex items-center justify-center gap-7">
           <a
             href="https://github.com/FranzSinaga"
-            className="text-gray-400 hover:text-white"
             target="_BLANK"
           >
-            <GithubIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
+            <GithubIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
           </a>
           <a
             href="https://id.linkedin.com/in/franz-sinaga"
-            className="text-gray-400 hover:text-white"
             target="_BLANK"
           >
-            <LinkedinIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
+            <LinkedinIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
           </a>
           <a
             href="mailto:sinagafranz12@gmail.com"
-            className="text-gray-400 hover:text-white"
           >
-            <EnvelopeIcon className="w-8 h-8 fill-gray-400 hover:fill-white" />
+            <EnvelopeIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
           </a>
         </div>
         <div>
