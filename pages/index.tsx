@@ -22,13 +22,13 @@ const Home: NextPage = () => {
       </Head>
 
       <AnimatedBgHero>
-        <div className="flex flex-col ml-36 text-dark dark:text-white">
+        <div className="flex flex-col lg:ml-36 md:ml-10 ml-4 text-dark dark:text-white">
           <p className="text-xl tracking-tight">My Name is</p>
-          <h1 className="text-6xl font-bold leading-tight">
+          <h1 className="md:text-6xl md:text-6xl text-4xl font-bold leading-tight">
             Franz Sinaga
             <br /> Frontend Developer
           </h1>
-          <p className="mt-12 max-w-2xl text-xl tracking-tight">
+          <p className="mt-12 max-w-2xl text-xl mr-3 md:mr-1 tracking-snug">
             I am a Frontend-focused Web Developer. I build Frontend Websites and
             Web Apps that lead to product success.
           </p>
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         </div>
         <div className="container flex flex wrap items-center justify-center">
           <div className="text-center">
-            <p className="max-w-4xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-4xl m-2 md:m-0 mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               I am a <span className="font-bold">Front-End Developer</span>{" "}
               located in Jakarta, Indonesia. Currently working in one of the
               biggest banks in Indonesia to build a product that meets the user
@@ -67,9 +67,10 @@ const Home: NextPage = () => {
       </div>
 
       <div
-        className="pt-96 bg-white dark:bg-gray-900 border-gray-900"
+        className="pt-10 md:pt-40 bg-white dark:bg-gray-900 border-gray-900"
         id="projects"
       >
+        <div className="pt-10 md:pt-32"></div>
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -98,7 +99,7 @@ const Home: NextPage = () => {
                 <ProjectCards
                   title="Premier League Table"
                   detail="Website to display the current standings for the English league"
-                  tech={["HTML", "Materialize CSS", "JS", "Workbox", "PWA"]}
+                  tech={["HTML", "CSS", "JS", "Workbox", "PWA"]}
                   Link="https://fir-hosting-a2698.web.app/"
                   GithubLink="https://github.com/FranzSinaga/pwa-premier-league-table"
                 />
@@ -120,10 +121,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-80 bg-white dark:bg-gray-900 border-gray-900">
+      <div className="pt-10 md:pt-40 bg-white dark:bg-gray-900 border-gray-900">
         <div id="experience" className="mb-16"></div>
         <div className=" container mx-auto flex flex-col">
-          <div className="ml-14">
+          <div className="ml-2 mr-2 md:mr-0 md:ml-14">
             <h1 className="text-center max-w-4xl my-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Where I’ve Worked
             </h1>
