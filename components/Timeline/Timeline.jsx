@@ -2,17 +2,17 @@ import React from "react";
 
 const Timeline = () => {
   return (
-    <div className="flex justify-end max-w-3xl">
+    <div className="md:flex md:justify-end max-w-3xl">
       <div className="mb-4">
         <ul
-          className="flex flex-wrap flex-row text-sm font-medium max-w-xs"
+          className="flex flex-wrap flex-row text-sm font-medium md:max-w-xs"
           id="myTab"
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
           <li className="mr-" role="presentation">
             <button
-              className="inline-block w-48 text-left p-4 border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
+              className="inline-block md:w-48 text-left p-4 border-b-2 md:border-b-0 border-l-0 md:border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
               id="profile-tab"
               data-tabs-target="#profile"
               type="button"
@@ -20,12 +20,12 @@ const Timeline = () => {
               aria-controls="profile"
               aria-selected="true"
             >
-              Bank Rakyat Indonesia
+              BRI
             </button>
           </li>
           <li className="mr-2" role="presentation">
             <button
-              className="inline-block w-48 p-4 text-left border-l-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+              className="inline-block md:w-48 text-left p-4 border-b-2 md:border-b-0 border-l-0 md:border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
               id="dashboard-tab"
               data-tabs-target="#dashboard"
               type="button"
@@ -38,7 +38,7 @@ const Timeline = () => {
           </li>
           <li className="mr-2" role="presentation">
             <button
-              className="inline-block w-48 p-4 text-left border-l-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+              className="inline-block md:w-48 text-left p-4 border-b-2 md:border-b-0 border-l-0 md:border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
               id="settings-tab"
               data-tabs-target="#settings"
               type="button"
@@ -51,7 +51,7 @@ const Timeline = () => {
           </li>
           <li role="presentation">
             <button
-              className="inline-block w-48 p-4 text-left border-l-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 dark:border-transparent text-gray-500 dark:text-gray-400 border-gray-100 dark:border-gray-700"
+              className="inline-block md:w-48 text-left p-4 border-b-2 md:border-b-0 border-l-0 md:border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
               id="contacts-tab"
               data-tabs-target="#contacts"
               type="button"

@@ -44,7 +44,7 @@ const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
         {title}
       </h5>
       <p className="font-normal text-gray-700 dark:text-gray-400">{detail}</p>
-      <ul className="flex flex-row gap-3 font-normal font-thin text-gray-700 dark:text-gray-400 mt-10">
+      <ul className="flex flex-row gap-2 font-normal font-thin text-gray-700 dark:text-gray-400 mt-10">
         {tech.map((element) => (
           <li key={element}>{element}</li>
         ))}
