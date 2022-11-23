@@ -10,7 +10,7 @@ const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
     <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700 ">
       <div className="flex flex-row justify-between items-center mb-5">
         <div>
-          <FolderIcons className="w-10 h-10 fill-blue-400" />
+          <FolderIcons className="w-7 h-7 fill-blue-400" />
         </div>
         <div className="flex flex-row gap-3">
           {Link === "" ? (
