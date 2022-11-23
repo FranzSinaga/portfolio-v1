@@ -23,32 +23,48 @@ const Home: NextPage = () => {
 
       <AnimatedBgHero>
         <div className="flex flex-col lg:ml-36 md:ml-10 ml-4 text-dark dark:text-white">
-          <p className="text-xl tracking-tight">My Name is</p>
-          <h1 className="md:text-6xl md:text-6xl text-4xl font-bold leading-tight">
+          {/* <p className="text-xl font-thin font-mono">
+            Hi, My Name is
+          </p> */}
+          <h1 className="md:text-6xl text-4xl font-extrabold mt-3">
             Franz Sinaga
-            <br /> Frontend Developer
           </h1>
-          <p className="mt-12 max-w-2xl text-xl mr-3 md:mr-1 tracking-snug">
+          <h1 className="md:text-6xl text-4xl font-extrabold mt-3">
+            Frontend Developer
+          </h1>
+          <p className="mt-12 max-w-2xl text-xl mr-3 md:mr-1 font-light leading-relaxed">
             I am a Frontend-focused Web Developer. I build Frontend Websites and
             Web Apps that lead to product success.
           </p>
+
+          <div className="m-3 flex items-center mt-10 gap-7">
+            <a href="https://github.com/FranzSinaga" target="_BLANK">
+              <GithubIcon className="w-8 h-8 fill-black hover:fill-blue-400 dark:fill-white dark:hover:fill-blue-400" />
+            </a>
+            <a href="https://id.linkedin.com/in/franz-sinaga" target="_BLANK">
+              <LinkedinIcon className="w-8 h-8 fill-black hover:fill-blue-400 dark:fill-white dark:hover:fill-blue-400" />
+            </a>
+            <a href="mailto:sinagafranz12@gmail.com">
+              <EnvelopeIcon className="w-8 h-8 fill-black hover:fill-blue-400 dark:fill-white dark:hover:fill-blue-400" />
+            </a>
+          </div>
         </div>
       </AnimatedBgHero>
 
       <div
         id="about"
-        className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900"
+        className="flex flex-col items-center justify-center bg-white dark:bg-gray-900"
       >
-        <div className="px-4 pt-14 md:pt-60 lg:pt-40 xl:pt-60">
+        <div className="px-4 pt-24 md:pt-60 ">
           <div className="mx-auto text-center">
-            <h1 className="max-w-4xl mb-24 text-4xl border-white font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            <h1 className="max-w-4xl mb-10 md:mb-24 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Get to know me!
             </h1>
           </div>
         </div>
         <div className="container flex flex wrap items-center justify-center">
           <div className="text-center">
-            <p className="max-w-4xl m-2 md:m-0 mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-4xl m-2 md:m-0 mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               I am a <span className="font-bold">Front-End Developer</span>{" "}
               located in Jakarta, Indonesia. Currently working in one of the
               biggest banks in Indonesia to build a product that meets the user
@@ -66,11 +82,8 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div
-        className="pt-10 md:pt-40 bg-white dark:bg-gray-900 border-gray-900"
-        id="projects"
-      >
-        <div className="pt-10 md:pt-32"></div>
+      <div className="pt-10 md:pt-40 bg-white dark:bg-gray-900 " id="projects">
+        <div className="pt-10 md:pt-10" id="projects"></div>
         <div className="container mx-auto flex flex-col">
           <div className="mx-14">
             <h1 className="max-w-4xl mb-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -111,18 +124,20 @@ const Home: NextPage = () => {
               <a
                 href="https://github.com/FranzSinaga?tab=repositories"
                 type="button"
-                className="text-white text-xl bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-light rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
+                className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
                 target="_BLANK"
               >
-                Other Project 👋
+                <span className="relative px-8 py-4 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  Other Project 💻
+                </span>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="pt-10 md:pt-40 bg-white dark:bg-gray-900 border-gray-900">
-        <div id="experience" className="mb-16"></div>
+      <div className="pt-0 md:pt-56 bg-white dark:bg-gray-900">
+        <div id="experience" className="mb-10 md:mb-24"></div>
         <div className=" container mx-auto flex flex-col">
           <div className="ml-2 mr-2 md:mr-0 md:ml-14">
             <h1 className="text-center max-w-4xl my-12 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -137,50 +152,44 @@ const Home: NextPage = () => {
 
       <div
         id="contact"
-        className="flex flex-col items-center justify-center bg-white dark:bg-gray-900 border-gray-900"
+        className="pt-10 md:pt-0 flex flex-col items-center justify-center bg-white dark:bg-gray-900 "
       >
-        <div className="px-4 py-14 md:py-60 lg:py-40 xl:py-60">
+        <div className="px-4 py-14 md:py-60 md:mt-24 lg:py-40 xl:py-60">
           <div className="mx-auto text-center">
             <h1 className="max-w-4xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Get In Touch
             </h1>
-            <p className="max-w-4xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-4xl mx-2 md:mx-0 mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               Whether you have a question or just want to say hi, I’ll try my
               best to get back to you! Say Hello
             </p>
             <a
               href="mailto:sinagafranz12@gmail.com"
               type="button"
-              className="text-white text-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-light rounded-lg text-sm px-6 py-3 text-center mr-2 mb-2"
+              className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
             >
-              Say Hello 👋
+              <span className="relative px-8 py-4 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                Say Hello 👋
+              </span>
             </a>
           </div>
         </div>
       </div>
 
-      <footer className="flex flex-col h-36 w-full bg-white dark:bg-gray-900 border-white dark:border-gray-900 items-center justify-center border-t">
+      <footer className="flex flex-col h-36 w-full bg-white dark:bg-gray-900 items-center justify-center">
         <div className="m-3 flex items-center justify-center gap-7">
-          <a
-            href="https://github.com/FranzSinaga"
-            target="_BLANK"
-          >
-            <GithubIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
+          <a href="https://github.com/FranzSinaga" target="_BLANK">
+            <GithubIcon className="w-8 h-8 fill-gray-400 hover:fill-blue-400" />
           </a>
-          <a
-            href="https://id.linkedin.com/in/franz-sinaga"
-            target="_BLANK"
-          >
-            <LinkedinIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
+          <a href="https://id.linkedin.com/in/franz-sinaga" target="_BLANK">
+            <LinkedinIcon className="w-8 h-8 fill-gray-400 hover:fill-blue-400" />
           </a>
-          <a
-            href="mailto:sinagafranz12@gmail.com"
-          >
-            <EnvelopeIcon className="w-8 h-8 fill-gray-400 hover:fill-black dark:hover:fill-white" />
+          <a href="mailto:sinagafranz12@gmail.com">
+            <EnvelopeIcon className="w-8 h-8 fill-gray-400 hover:fill-blue-400" />
           </a>
         </div>
         <div>
-          <p className="text-gray-400 font-light text-lg">
+          <p className="text-black dark:text-gray-400 font-light text-lg">
             &#169; 2022 Franz Aditya Natanael Sinaga
           </p>
         </div>
