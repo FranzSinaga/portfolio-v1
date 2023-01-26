@@ -6,15 +6,25 @@ const Toggle = dynamic(() => import("../ToogleTheme/ThemeToggle"), {
   ssr: false,
 });
 
+const Logo = dynamic(() => import("../../Icons/BrandIcon"), {
+  ssr: false,
+});
+
+// const Logo = () => {
+//   return getInitialTheme() === "dark" ? (
+//     <Image src="/logo-white.png" width={70} height={40} alt="Franz Sinaga" />
+//   ) : (
+//     <Image src="/logo-black.png" width={70} height={40} alt="Franz Sinaga" />
+//   );
+// };
+
 const Nav = () => {
   return (
     <nav className="p-3 fixed z-20 border-b-2 dark:border-b-0 drop-shadow-md bg-white dark:bg-black w-full">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="#" className="flex items-center">
-          <img
-            className="mr-3 h-6 sm:h-10 invisible"
-            alt="Franz Simaga"
-          />
+          <Logo></Logo>
+          {/* <img src="/logo-white.png" className="mr-3 h-6 sm:h-10 invisible"/> */}
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
         </a>
         <div className="flex gap-4">
@@ -44,7 +54,10 @@ const Nav = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden font-mono w-full md:block md:w-auto" id="navbar-solid-bg">
+        <div
+          className="hidden font-mono w-full md:block md:w-auto"
+          id="navbar-solid-bg"
+        >
           <ul className="flex flex-col mt-4 bg-white rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-black md:dark:bg-transparent dark:border-gray-700">
             <li>
               <Link href={"/"}>

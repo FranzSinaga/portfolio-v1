@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useEffect, useState } from 'react'
 
-const getInitialTheme = () => {
+export const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
     const storedPrefs = window.localStorage.getItem("color-theme");
     if (typeof storedPrefs === "string") {

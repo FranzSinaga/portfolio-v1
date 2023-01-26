@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <div className="flex min-h-screen flex-col">
       <Head>
         <title>Franz Sinaga</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/franz.ico" />
 
         <meta name="title" content="Franz Sinaga" />
         <meta
