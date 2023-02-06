@@ -1,9 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Nav from "../components/NavBar/Nav";
+import Nav from "../src/components/NavBar/Nav";
 import Head from "next/head";
-import { ThemeProvider } from "../components/ToogleTheme/ThemeContext";
-import Background from "../components/ToogleTheme/Background";
+import { ThemeProvider } from "../src/components/ToogleTheme/ThemeContext";
+import Background from "../src/components/ToogleTheme/Background";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

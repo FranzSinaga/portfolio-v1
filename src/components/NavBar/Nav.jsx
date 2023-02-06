@@ -6,7 +6,7 @@ const Toggle = dynamic(() => import("../ToogleTheme/ThemeToggle"), {
   ssr: false,
 });
 
-const Logo = dynamic(() => import("../../src/Icons/BrandIcon"), {
+const Logo = dynamic(() => import("../../../src/Icons/BrandIcon"), {
   ssr: false,
 });
 
