@@ -1,6 +1,6 @@
 // import { getInitialTheme } from "../components/ToogleTheme/ThemeContext";
 import Image from "next/image";
-import { ThemeContext } from "../components/ToogleTheme/ThemeContext";
+import { ThemeContext } from "../../components/ToogleTheme/ThemeContext";
 import React from "react";
 const Logo = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);

@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import AnimatedBgHero from "../components/Hero/AnimatedBgHero";
-import ProjectCards from "../components/Cards/ProjectCards";
-import Timeline from "../components/Timeline/Timeline";
+// import Image from "next/image";
+import AnimatedBgHero from "../src/components/Hero/AnimatedBgHero";
+import ProjectCards from "../src/components/Cards/ProjectCards";
+import Timeline from "../src/components/Timeline/Timeline";
 
-import { GithubIcon, LinkedinIcon, EnvelopeIcon } from "../Icons/SocialIcons";
+import { GithubIcon, LinkedinIcon, EnvelopeIcon } from "../src/Icons/SocialIcons";
 
 const Home: NextPage = () => {
   return (
@@ -23,9 +23,6 @@ const Home: NextPage = () => {
 
       <AnimatedBgHero>
         <div className="flex flex-col lg:ml-36 md:ml-10 ml-4 text-dark dark:text-white">
-          {/* <p className="text-xl font-thin font-mono">
-            Hi, My Name is
-          </p> */}
           <h1 className="md:text-6xl text-4xl font-extrabold mt-3">
             Franz Sinaga
           </h1>
