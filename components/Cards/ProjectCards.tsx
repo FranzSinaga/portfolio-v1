@@ -5,7 +5,21 @@ import { GithubAltIcon } from "../../Icons/SocialIcons";
 import { UpRightFromSquareIcon } from "../../Icons/ArrowIcons";
 import { FolderIcons } from "../../Icons/BasicIcons";
 
-const ProjectCards = ({ title, detail, tech, GithubLink = "", Link = "" }) => {
+interface Props {
+  title: string;
+  detail: string;
+  tech: string[];
+  GithubLink: string;
+  Link: string;
+}
+
+const ProjectCards = ({
+  title,
+  detail,
+  tech,
+  GithubLink = "",
+  Link = "",
+}: Props) => {
   return (
     <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700 ">
       <div className="flex flex-row justify-between items-center mb-5">

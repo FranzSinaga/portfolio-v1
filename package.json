@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "motion": "^12.4.10",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0"

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AnimatedBgHero = ({ children }) => {
+const AnimatedBgHero = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className=" relative overflow-hidden hero-height flex items-center justify-center">
       <div className="features_gradient-wrapper">
@@ -15,7 +15,7 @@ const AnimatedBgHero = ({ children }) => {
 };
 
 AnimatedBgHero.propTypes = {
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export default AnimatedBgHero;
