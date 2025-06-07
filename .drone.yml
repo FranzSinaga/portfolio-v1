@@ -2,16 +2,6 @@ kind: pipeline
 type: docker
 name: web-portfolio-v1
 
-environment:
-  VPS_IP:
-    from_secret: vps_ip
-  USERNAME:
-    from_secret: username
-  PORT:
-    from_secret: port
-  DIR:
-    from_secret: project_dir
-
 steps:
   - name: deploy
     image: appleboy/drone-ssh
@@ -25,7 +15,7 @@ steps:
       password:
         from_secret: ssh_password
       script:
-        - cd $${DIR}
+        - cd ${project_dir}
         - git pull origin master
         - docker-compose down
         - docker-compose up -d --build
