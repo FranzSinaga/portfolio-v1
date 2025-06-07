@@ -15,7 +15,7 @@ steps:
       key:
         from_secret: ssh_private_key
       script:
-        - cd ${project_dir}
+        - cd ~/projects/web-portfolio-v1
         - git pull origin master
         - docker-compose down
         - docker-compose up -d --build
