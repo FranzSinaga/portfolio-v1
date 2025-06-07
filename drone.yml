@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: web-portfolio-v1
+
+steps:
+  - name: deploy-web-portfolio-v1
+    image: appleboy/drone-ssh
+    settings:
+      host: vps_ip
+      username: username        # GANTI dengan user kamu
+      port: port
+      password:
+        from_secret: ssh_password
+      script:
+        - cd ${DIR}
+        - docker-compose down
+        - docker-compose up -d --build

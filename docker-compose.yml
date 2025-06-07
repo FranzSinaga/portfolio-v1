@@ -1,0 +1,14 @@
+services:
+  website:
+    build: .
+    container_name: web-portfolio-v1
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+    networks:
+      - web-portfolio-v1
+
+networks:
+  web-portfolio-v1:
+    name: net-portfolio-v1
+    driver: bridge
