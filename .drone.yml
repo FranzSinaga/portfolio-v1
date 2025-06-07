@@ -2,19 +2,34 @@ kind: pipeline
 type: docker
 name: web-portfolio-v1
 
+environment:
+  VPS_IP:
+    from_secret: vps_ip
+  USERNAME:
+    from_secret: username
+  PORT:
+    from_secret: port
+  DIR:
+    from_secret: project_dir
+
 steps:
-  - name: deploy-web-portfolio-v1
+  - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host: ${vps_ip}
-      username: ${username}        # GANTI dengan user kamu
-      port: ${port}
+      host:
+        from_secret: vps_ip
+      username:
+        from_secret: username
+      port:
+        from_secret: port
       password:
-        from_secret: ${ssh_password}
+        from_secret: ssh_password
       script:
-        - cd ${DIR}
+        - cd $${DIR}
+        - git pull origin master
         - docker-compose down
         - docker-compose up -d --build
+        - docker system prune -f
 
 trigger:
   event:
