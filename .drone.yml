@@ -6,11 +6,11 @@ steps:
   - name: deploy-web-portfolio-v1
     image: appleboy/drone-ssh
     settings:
-      host: vps_ip
-      username: username        # GANTI dengan user kamu
-      port: port
+      host: ${vps_ip}
+      username: ${username}        # GANTI dengan user kamu
+      port: ${port}
       password:
-        from_secret: ssh_password
+        from_secret: ${ssh_password}
       script:
         - cd ${DIR}
         - docker-compose down
