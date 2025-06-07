@@ -75,13 +75,13 @@ const Home: NextPage = () => {
           </div>
         </div>
         <BlurFade inView>
-          <div className="container flex flex wrap items-center justify-center">
+          <div className="container flex wrap items-center justify-center">
             <div className="text-center">
               <p className="max-w-4xl m-2 md:m-0 mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
                 I am a <span className="font-bold">Front-End Developer</span>{" "}
                 located in Jakarta, Indonesia. Currently working in one of the
-                biggest banks in Indonesia to build a product that meets the
-                user need.
+                company in Indonesia to build a product that meets the user
+                need.
                 <br />
                 <br />I enjoy creating things that come to live on the internet.
                 Interested in <span className="font-bold">
