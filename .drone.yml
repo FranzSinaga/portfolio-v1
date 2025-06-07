@@ -12,8 +12,8 @@ steps:
         from_secret: username
       port:
         from_secret: port
-      password:
-        from_secret: ssh_password
+      key:
+        from_secret: ssh_private_key
       script:
         - cd ${project_dir}
         - git pull origin master
