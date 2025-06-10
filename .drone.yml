@@ -2,6 +2,9 @@ kind: pipeline
 type: docker
 name: web-portfolio-v1
 
+clone:
+  disable: true
+
 steps:
   - name: deploy
     image: appleboy/drone-ssh
@@ -15,10 +18,15 @@ steps:
       key:
         from_secret: ssh_private_key
       script:
+        - echo "=== Pulling Latest Code ==="
         - cd ~/projects/web-portfolio-v1
         - git pull origin master
+        
+        - echo "=== Building Application ==="
         - docker-compose down
         - docker-compose up -d --build
+
+        - echo "=== Docker Prune ==="
         - docker system prune -f
 
 trigger:
