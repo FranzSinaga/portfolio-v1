@@ -12,7 +12,7 @@ server:
     from_secret: username
   # Set the port manually because it can't be retrieved from a secret — the secret returns a string, but the port must be a number.
   # Default SSH Port is 22
-  port: 22
+  port: # PORT HERE
   ssh_key:
    from_secret: ssh_private_key
 
