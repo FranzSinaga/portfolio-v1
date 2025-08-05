@@ -85,7 +85,7 @@ const Home: NextPage = () => {
                 <br />
                 <br />I enjoy creating things that come to live on the internet.
                 Interested in <span className="font-bold">
-                  web development
+                  Web Development
                 </span>{" "}
                 and curiosity about technology in the web development field.
                 Have experience in building applications to solve a problem and
