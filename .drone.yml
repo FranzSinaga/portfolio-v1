@@ -1,5 +1,5 @@
 kind: pipeline
-type: docker
+type: ssh
 name: web-portfolio-v1
 
 clone:
@@ -15,18 +15,21 @@ server:
   port: 22
   ssh_key:
    from_secret: ssh_private_key
-  
+
+environment:
+  PROJECT_PATH:
+   from_secret: project_dir
 
 steps:
   - name: Checkout
     commands:
       - echo "=== Checkout branch ==="
-      - cd ~/projects/web-portfolio-v1
+      - cd $PROJECT_PATH
       - git checkout master
   - name: Pulling
     commands:
       - echo "=== Pulling latest code ==="
-      - git pull origin 
+      - git pull origin master
   - name: Build and Deploy
     commands:
       - echo "=== Building Application ==="
