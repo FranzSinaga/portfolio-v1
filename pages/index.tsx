@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           </BlurFade>
           <BlurFade inView delay={0.25}>
             <h1 className="md:text-6xl text-4xl font-extrabold mt-3">
-              Frontend Developer Keren
+              Frontend Developer
             </h1>
           </BlurFade>
 

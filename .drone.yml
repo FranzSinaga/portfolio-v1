@@ -5,29 +5,39 @@ name: web-portfolio-v1
 clone:
   disable: true
 
-steps:
-  - name: deploy
-    image: appleboy/drone-ssh
-    settings:
-      host:
-        from_secret: vps_ip
-      username:
-        from_secret: username
-      port:
-        from_secret: port
-      key:
-        from_secret: ssh_private_key
-      script:
-        - echo "=== Pulling Latest Code ==="
-        - cd ~/projects/web-portfolio-v1
-        - git pull origin master
-        
-        - echo "=== Building Application ==="
-        - docker-compose down
-        - docker-compose up -d --build
+server:
+  host:
+    from_secret: vps_ip
+  user:
+    from_secret: username
+  # Set the port manually because it can't be retrieved from a secret — the secret returns a string, but the port must be a number.
+  # Default SSH Port is 22
+  port: 22
+  ssh_key:
+   from_secret: ssh_private_key
+  
 
-        - echo "=== Docker Prune ==="
-        - docker system prune -f
+steps:
+  - name: Checkout
+    commands:
+      - echo "=== Checkout branch ==="
+      - cd ~/projects/web-portfolio-v1
+      - git checkout master
+  - name: Pulling
+    commands:
+      - echo "=== Pulling latest code ==="
+      - git pull origin 
+  - name: Build and Deploy
+    commands:
+      - echo "=== Building Application ==="
+      - echo "=== Stop and Remove the service ==="
+      - docker-compose down
+      - echo "=== Build and Deploy"
+      - docker-compose up -d --build
+  - name: Cleanup
+    commands:
+      - echo "=== Cleanup the service ==="
+      - docker system prune -f
 
 trigger:
   event:
