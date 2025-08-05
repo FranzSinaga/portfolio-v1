@@ -1,0 +1,51 @@
+# Copy this file and rename it to `.drone.secure.yml`
+# Make sure not to commit .drone.secure.yml this file to Git if it contains sensitive data.
+kind: pipeline
+type: ssh
+name: web-portfolio-v1
+
+clone:
+  disable: true
+
+server:
+  host:
+    from_secret: vps_ip
+  user:
+    from_secret: username
+  # Set the port manually because it can't be retrieved from a secret — the secret returns a string, but the port must be a number.
+  # Default SSH Port is 22
+  port: 22
+  ssh_key:
+   from_secret: ssh_private_key
+
+environment:
+  PROJECT_PATH:
+   from_secret: project_dir
+
+steps:
+  - name: Checkout
+    commands:
+      - echo "=== Checkout branch ==="
+      - cd $PROJECT_PATH
+      - git checkout master
+  - name: Pulling
+    commands:
+      - echo "=== Pulling latest code ==="
+      - git pull origin master
+  - name: Build and Deploy
+    commands:
+      - echo "=== Building Application ==="
+      - echo "=== Stop and Remove the service ==="
+      - docker-compose down
+      - echo "=== Build and Deploy"
+      - docker-compose up -d --build
+  - name: Cleanup
+    commands:
+      - echo "=== Cleanup the service ==="
+      - docker system prune -f
+
+trigger:
+  event:
+    - push
+  branch:
+    - master
