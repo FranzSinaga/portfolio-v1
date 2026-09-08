@@ -30,13 +30,18 @@ steps:
     commands:
       - echo "=== Pulling latest code ==="
       - git pull origin master
-  - name: Build and Deploy
+  - name: Stop service
+    commands:
+      - echo "=== Stop and remove the running service ==="
+      - docker-compose down
+  - name: Build
     commands:
       - echo "=== Building Application ==="
-      - echo "=== Stop and Remove the service ==="
-      - docker-compose down
-      - echo "=== Build and Deploy"
-      - docker-compose up -d --build
+      - docker-compose build
+  - name: Deploy
+    commands:
+      - echo "=== Starting the service ==="
+      - docker-compose up -d
   - name: Cleanup
     commands:
       - echo "=== Cleanup the service ==="
