@@ -1,10 +1,7 @@
 import React from "react";
 
-import { GithubAltIcon } from "../../Icons/SocialIcons";
-import { UpRightFromSquareIcon } from "../../Icons/ArrowIcons";
-import { FolderIcons } from "../../Icons/BasicIcons";
-
 interface Props {
+  index: number;
   title: string;
   detail: string;
   tech: string[];
@@ -13,6 +10,7 @@ interface Props {
 }
 
 const ProjectCards = ({
+  index,
   title,
   detail,
   tech,
@@ -20,48 +18,37 @@ const ProjectCards = ({
   Link = "",
 }: Props) => {
   return (
-    <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700 ">
-      <div className="flex flex-row justify-between items-center mb-5">
-        <div>
-          <FolderIcons className="w-7 h-7 fill-blue-400" />
-        </div>
-        <div className="flex flex-row gap-3">
-          {Link === "" ? (
-            ""
-          ) : (
-            <a
-              href={Link}
-              className="text-gray-400 hover:text-white"
-              target="_BLANK"
-              rel="noreferrer"
-            >
-              <UpRightFromSquareIcon className="w-7 h-7 font-light fill-gray-400 hover:fill-blue-400" />
-            </a>
-          )}
-
-          {GithubLink === "" ? (
-            ""
-          ) : (
-            <a
-              href={GithubLink}
-              className="text-gray-400 hover:text-white"
-              target="_BLANK"
-              rel="noreferrer"
-            >
-              <GithubAltIcon className="w-7 h-7 fill-gray-400 hover:fill-blue-400" />
-            </a>
-          )}
-        </div>
-      </div>
-      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <div className="flex h-full flex-col">
+      <span className="font-display text-sm text-muted">
+        {index.toString().padStart(2, "0")}
+      </span>
+      <h3 className="mt-2 border-b border-rule pb-3 font-display text-xl font-semibold text-ink">
         {title}
-      </h5>
-      <p className="font-normal text-gray-700 dark:text-gray-400">{detail}</p>
-      <ul className="flex flex-row gap-2 font-normal font-thin text-gray-700 dark:text-gray-400 mt-10">
-        {tech.map((element) => (
-          <li key={element}>{element}</li>
-        ))}
-      </ul>
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-ink2">{detail}</p>
+      <p className="mt-4 font-mono text-xs text-muted">{tech.join(" · ")}</p>
+      <div className="mt-auto flex items-center gap-4 pt-6">
+        {Link !== "" && (
+          <a
+            href={Link}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-ink underline decoration-rule2 decoration-1 underline-offset-4 transition-colors duration-200 hover:text-accent hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+          >
+            View live
+          </a>
+        )}
+        {GithubLink !== "" && (
+          <a
+            href={GithubLink}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm text-ink underline decoration-rule2 decoration-1 underline-offset-4 transition-colors duration-200 hover:text-accent hover:decoration-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+          >
+            Source
+          </a>
+        )}
+      </div>
     </div>
   );
 };

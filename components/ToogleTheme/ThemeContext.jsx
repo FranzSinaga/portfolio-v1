@@ -1,47 +1,38 @@
 import React from "react";
-import { useEffect, useState } from 'react'
 
 export const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
     const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof storedPrefs === "string") {
+    if (storedPrefs === "light" || storedPrefs === "dark") {
       return storedPrefs;
-    }
-
-    const userMedia = window.matchMedia("(prefers-color-scheme: dark)");
-    if (userMedia.matches) {
-      return "dark";
     }
   }
 
-  return "light"; // light theme as the default;
+  return "dark"; // dark theme is the default
 };
 
 export const ThemeContext = React.createContext();
 
-export const ThemeProvider = ({ initialTheme = undefined, children }) => {
-  const [theme, setTheme] = React.useState(getInitialTheme);
+export const ThemeProvider = ({ children }) => {
+  // Starts at "dark" so server and client agree on the first render. The
+  // blocking script in pages/_document.tsx already applied the real theme
+  // to <html> before paint, so React just catches up silently on mount.
+  const [theme, setTheme] = React.useState("dark");
 
-  const rawSetTheme = (rawTheme) => {
+  const applyTheme = (rawTheme) => {
     const root = window.document.documentElement;
-    const isDark = rawTheme === "dark";
-
-    root.classList.remove(isDark ? "light" : "dark");
+    root.classList.remove(rawTheme === "dark" ? "light" : "dark");
     root.classList.add(rawTheme);
-
     localStorage.setItem("color-theme", rawTheme);
+    setTheme(rawTheme);
   };
 
-  if (initialTheme) {
-    rawSetTheme(initialTheme);
-  }
-
   React.useEffect(() => {
-    rawSetTheme(theme);
-  }, [theme]);
+    applyTheme(getInitialTheme());
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme: applyTheme }}>
       {children}
     </ThemeContext.Provider>
   );

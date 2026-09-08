@@ -4,65 +4,42 @@ import BlurFade from "../ui/blur-fade";
 
 const Timeline = () => {
   return (
-    <div className="md:flex md:justify-end max-w-3xl">
-      <div className="mb-4">
-        <ul
-          className="flex flex-wrap flex-row text-sm font-medium md:max-w-xs"
-          id="myTab"
-          data-tabs-toggle="#myTabContent"
-          role="tablist"
+    <ol className="mx-auto flex max-w-3xl flex-col">
+      {TIMELINE_DATA.map((entry, index) => (
+        <li
+          key={entry.id}
+          className="grid grid-cols-[3.5rem_1fr] gap-4 border-t border-rule py-8 first:border-t-0 md:grid-cols-[5rem_1fr] md:gap-8"
         >
-          {TIMELINE_DATA.map((e, index) => (
-            <BlurFade key={index} inView delay={0.25 + index * 0.05}>
-              <li key={index} className="mr-2" role="presentation">
-                <button
-                  id={`${e.id}-tab`}
-                  data-tabs-target={`#${e.id}`}
-                  type="button"
-                  role="tab"
-                  aria-controls={e.id}
-                  aria-selected={index === 0 ? "true" : "false"}
-                  className="inline-block md:w-48 text-left p-3 border-b-2 md:border-b-0 border-l-0 md:border-l-2 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500"
-                >
-                  {e.name}
-                </button>
-              </li>
-            </BlurFade>
-          ))}
-        </ul>
-      </div>
-      <div id="myTabContent" className="w-full">
-        {TIMELINE_DATA.map((e, index) => (
-          <div
-            className="p-4 bg-gray-50 rounded-lg dark:bg-gray-800"
-            id={e.id}
-            role="tabpanel"
-            aria-labelledby={`${e.id}-tab`}
-          >
-            <BlurFade inView delay={0.25}>
-              <p className="text-md mb-2 text-black dark:text-gray-400">
-                <strong className="font-large text-gray-800 dark:text-white">
-                  {e.role}
-                </strong>{" "}
-                | {e.periode}
+          <BlurFade inView delay={0.1 + index * 0.05}>
+            <span className="font-mono text-sm text-muted">
+              {(index + 1).toString().padStart(2, "0")}.0
+            </span>
+          </BlurFade>
+          <BlurFade inView delay={0.15 + index * 0.05}>
+            <div>
+              <h3 className="font-display text-lg font-semibold text-ink">
+                {entry.name}
+              </h3>
+              <p className="mt-1 font-mono text-xs uppercase tracking-wide text-muted">
+                {entry.role} · {entry.periode}
               </p>
-            </BlurFade>
-            <ul className="ml-5 list-disc">
-              {e.responsibility.map((item, index) => (
-                <BlurFade key={index} inView delay={0.25 + index * 0.05}>
-                  <ListItem item={item} />
-                </BlurFade>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
+              <ul className="mt-4 flex flex-col gap-2">
+                {entry.responsibility.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-2 text-sm leading-relaxed text-ink2"
+                  >
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </BlurFade>
+        </li>
+      ))}
+    </ol>
   );
-};
-
-const ListItem = ({ item }: { item: string }) => {
-  return <li className="text-sm text-black dark:text-gray-400">{item}</li>;
 };
 
 export default Timeline;
