@@ -10,9 +10,8 @@ server:
     from_secret: vps_ip
   user:
     from_secret: username
-  # Set the port manually because it can't be retrieved from a secret — the secret returns a string, but the port must be a number.
-  # Default SSH Port is 22
-  port: # PORT HERE
+  # Drone's ssh pipeline has no separate port field — include the port in
+  # the host secret itself, e.g. vps_ip = "1.2.3.4:2230".
   ssh_key:
    from_secret: ssh_private_key
 
@@ -33,15 +32,15 @@ steps:
   - name: Stop service
     commands:
       - echo "=== Stop and remove the running service ==="
-      - docker-compose down
+      - docker compose down
   - name: Build
     commands:
       - echo "=== Building Application ==="
-      - docker-compose build
+      - docker compose build --no-cache
   - name: Deploy
     commands:
       - echo "=== Starting the service ==="
-      - docker-compose up -d
+      - docker compose up -d
   - name: Cleanup
     commands:
       - echo "=== Cleanup the service ==="
