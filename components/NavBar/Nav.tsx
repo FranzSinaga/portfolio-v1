@@ -60,13 +60,12 @@ const Nav = () => {
         >
           <ul className="flex flex-col mt-4 bg-white rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-black md:dark:bg-transparent dark:border-gray-700">
             <li>
-              <Link href={"/"}>
-                <a
-                  className="block text-md py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-400 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:dark:hover:bg-transparent"
-                  aria-current="page"
-                >
-                  Home
-                </a>
+              <Link
+                href={"/"}
+                className="block text-md py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-400 dark:hover:bg-gray-700 dark:hover:text-blue-400 md:dark:hover:bg-transparent"
+                aria-current="page"
+              >
+                Home
               </Link>
             </li>
             <li>
