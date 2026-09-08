@@ -15,34 +15,49 @@ server:
   ssh_key:
    from_secret: ssh_private_key
 
-# Sets the cwd for every step below, so PROJECT_PATH doesn't need to be
-# repeated per-step. UNVERIFIED: if Drone rejects from_secret here (this
-# field may only accept a literal string), replace with a plain path, e.g.
-# workspace: { path: /home/user/apps/portfolio-v1 }.
-workspace:
-  path:
-    from_secret: project_dir
-
+# workspace.path only accepts a literal string (no from_secret), and a
+# literal path would expose the VPS username in the repo, so PROJECT_PATH
+# stays a per-step secret instead of a global workspace path.
 steps:
   - name: Checkout
+    environment:
+      PROJECT_PATH:
+        from_secret: project_dir
     commands:
       - echo "=== Checkout branch ==="
+      - cd $PROJECT_PATH
       - git checkout master
   - name: Pulling
+    environment:
+      PROJECT_PATH:
+        from_secret: project_dir
     commands:
       - echo "=== Pulling latest code ==="
+      - cd $PROJECT_PATH
       - git pull origin master
   - name: Stop service
+    environment:
+      PROJECT_PATH:
+        from_secret: project_dir
     commands:
       - echo "=== Stop and remove the running service ==="
+      - cd $PROJECT_PATH
       - docker compose down
   - name: Build
+    environment:
+      PROJECT_PATH:
+        from_secret: project_dir
     commands:
       - echo "=== Building Application ==="
+      - cd $PROJECT_PATH
       - docker compose build --no-cache
   - name: Deploy
+    environment:
+      PROJECT_PATH:
+        from_secret: project_dir
     commands:
       - echo "=== Starting the service ==="
+      - cd $PROJECT_PATH
       - docker compose up -d
   - name: Cleanup
     commands:
