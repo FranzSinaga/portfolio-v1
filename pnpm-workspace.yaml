@@ -1,0 +1,7 @@
+# browserslist's data packages (caniuse-lite, electron-to-chromium) publish
+# multiple times a day, so pnpm's minimumReleaseAge supply-chain check would
+# reject almost any lockfile update involving them. Exclude just those two
+# instead of disabling the check for every package.
+minimumReleaseAgeExclude:
+  - caniuse-lite
+  - electron-to-chromium
