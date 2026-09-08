@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useEffect, useState } from 'react'
 
 export const getInitialTheme = () => {
@@ -46,8 +45,4 @@ export const ThemeProvider = ({ initialTheme, children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
-ThemeProvider.propTypes = {
-  children: PropTypes.any,
-  initialTheme: PropTypes.any,
 };

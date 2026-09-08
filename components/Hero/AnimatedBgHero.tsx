@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const AnimatedBgHero = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -12,10 +11,6 @@ const AnimatedBgHero = ({ children }: { children: React.ReactNode }) => {
       <div className="container mx-auto z-10 text-">{children}</div>
     </section>
   );
-};
-
-AnimatedBgHero.propTypes = {
-  children: PropTypes.any,
 };
 
 export default AnimatedBgHero;

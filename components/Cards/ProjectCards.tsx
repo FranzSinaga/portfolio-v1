@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { GithubAltIcon } from "../../Icons/SocialIcons";
 import { UpRightFromSquareIcon } from "../../Icons/ArrowIcons";
@@ -65,14 +64,6 @@ const ProjectCards = ({
       </ul>
     </div>
   );
-};
-
-ProjectCards.propTypes = {
-  title: PropTypes.string.isRequired,
-  detail: PropTypes.string.isRequired,
-  tech: PropTypes.array.isRequired,
-  GithubLink: PropTypes.string.isRequired,
-  Link: PropTypes.string.isRequired,
 };
 
 export default ProjectCards;
