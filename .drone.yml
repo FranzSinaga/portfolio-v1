@@ -15,15 +15,18 @@ server:
   ssh_key:
    from_secret: ssh_private_key
 
-environment:
-  PROJECT_PATH:
-   from_secret: project_dir
+# Sets the cwd for every step below, so PROJECT_PATH doesn't need to be
+# repeated per-step. UNVERIFIED: if Drone rejects from_secret here (this
+# field may only accept a literal string), replace with a plain path, e.g.
+# workspace: { path: /home/user/apps/portfolio-v1 }.
+workspace:
+  path:
+    from_secret: project_dir
 
 steps:
   - name: Checkout
     commands:
       - echo "=== Checkout branch ==="
-      - cd $PROJECT_PATH
       - git checkout master
   - name: Pulling
     commands:
