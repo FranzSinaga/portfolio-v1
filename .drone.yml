@@ -7,22 +7,17 @@ clone:
 
 server:
   host:
-    from_secret: vps_ip
+    from_secret: DEPLOY_HOST
   user:
-    from_secret: username
-  # Drone's ssh pipeline has no separate port field — include the port in
-  # the host secret itself, e.g. vps_ip = "1.2.3.4:2230".
+    from_secret: DEPLOY_USERNAME
   ssh_key:
-   from_secret: ssh_private_key
+   from_secret: DEPLOY_SSH_KEY
 
-# workspace.path only accepts a literal string (no from_secret), and a
-# literal path would expose the VPS username in the repo, so PROJECT_PATH
-# stays a per-step secret instead of a global workspace path.
 steps:
   - name: Checkout & Pull
     environment: &project_env
       PROJECT_PATH:
-        from_secret: project_dir
+        from_secret: APP_DIR
     commands:
       - echo "=== Checkout branch and pull latest code ==="
       - cd $PROJECT_PATH
