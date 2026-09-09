@@ -19,30 +19,23 @@ server:
 # literal path would expose the VPS username in the repo, so PROJECT_PATH
 # stays a per-step secret instead of a global workspace path.
 steps:
-  - name: Checkout
+  - name: Checkout & Pull
     environment:
       PROJECT_PATH:
         from_secret: project_dir
     commands:
-      - echo "=== Checkout branch ==="
+      - echo "=== Checkout branch and pull latest code ==="
       - cd $PROJECT_PATH
       - git checkout master
-  - name: Pulling
-    environment:
-      PROJECT_PATH:
-        from_secret: project_dir
-    commands:
-      - echo "=== Pulling latest code ==="
-      - cd $PROJECT_PATH
       - git pull origin master
-  - name: Stop service
+  - name: Verify
     environment:
       PROJECT_PATH:
         from_secret: project_dir
     commands:
-      - echo "=== Stop and remove the running service ==="
+      - echo "=== Typecheck and lint ==="
       - cd $PROJECT_PATH
-      - docker compose down
+      - docker run --rm -v "$PWD":/app -w /app node:20-alpine sh -c "corepack enable && pnpm install --frozen-lockfile && pnpm exec tsc --noEmit && pnpm exec next lint"
   - name: Build
     environment:
       PROJECT_PATH:
@@ -56,8 +49,9 @@ steps:
       PROJECT_PATH:
         from_secret: project_dir
     commands:
-      - echo "=== Starting the service ==="
+      - echo "=== Stop old service and start the new one ==="
       - cd $PROJECT_PATH
+      - docker compose down
       - docker compose up -d
   - name: Cleanup
     commands:
