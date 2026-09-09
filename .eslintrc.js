@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "next"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  ignorePatterns: [".next/", "node_modules/"],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
@@ -13,6 +14,10 @@ module.exports = {
   rules: {
     "no-undef": "off",
     "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off",
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };
