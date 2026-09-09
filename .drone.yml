@@ -20,7 +20,7 @@ server:
 # stays a per-step secret instead of a global workspace path.
 steps:
   - name: Checkout & Pull
-    environment:
+    environment: &project_env
       PROJECT_PATH:
         from_secret: project_dir
     commands:
@@ -29,25 +29,19 @@ steps:
       - git checkout master
       - git pull origin master
   - name: Verify
-    environment:
-      PROJECT_PATH:
-        from_secret: project_dir
+    environment: *project_env
     commands:
       - echo "=== Typecheck and lint ==="
       - cd $PROJECT_PATH
       - docker run --rm -v "$PWD":/app -w /app node:20-alpine sh -c "corepack enable && pnpm install --frozen-lockfile && pnpm exec tsc --noEmit && pnpm run lint"
   - name: Build
-    environment:
-      PROJECT_PATH:
-        from_secret: project_dir
+    environment: *project_env
     commands:
       - echo "=== Building Application ==="
       - cd $PROJECT_PATH
       - docker compose build --no-cache
   - name: Deploy
-    environment:
-      PROJECT_PATH:
-        from_secret: project_dir
+    environment: *project_env
     commands:
       - echo "=== Stop old service and start the new one ==="
       - cd $PROJECT_PATH
